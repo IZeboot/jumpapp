@@ -31,23 +31,7 @@ export default class SearchBar extends Component {
       <Animated.View style={[styles.wrapper, transformWrapper]}>
         <Animated.View style={opacitySearchBar}>
           <View style={styles.searchContainer}>
-            {/* <Animated.View style={[
-              styles.arrowMinimizeContainer, 
-              arrowMinimizeStyle
-            ]}>
-              <TouchableOpacity onPress={() => {
-                animation.minimizeBar();
-                this.blurInputs();
-              }}>
-                <MaterialIcons
-                  name='keyboard-arrow-up' 
-                  size={36} 
-                  style={styles.arrowMinimizeIcon} 
-                  color='#fff'
-                />
-              </TouchableOpacity>
-            </Animated.View> */}
-            <Animated.View style={[transformSearchBar]}>
+            <Animated.View style={[transformSearchBar, styles.searchBar]}>
               <View style={styles.searchInput}>
                 <MaterialIcons
                   name='search' 
@@ -71,41 +55,15 @@ export default class SearchBar extends Component {
                 />
                
               </View>
-              {/* <Animated.View style={[
-                styles.searchInput, 
-                styles.locationInput, 
-                opacityLocationInput
-              ]}>
-                <MaterialIcons
-                  name='place' 
-                  size={22} 
-                  style={styles.searchIcon} 
-                  color='#bbb'
-                />
-                <TextInput 
-                  style={styles.inputText}
-                  placeholder={'Anywhere'}
-                  placeholderTextColor={'#999'}
-                  underlineColorAndroid={'#fff'}
-                  autoCorrect={false}
-                  onFocus={() => {
-                    this.props.changeInputFocus('location');
-                  }}
-                  ref={(inputLocation) => {
-                    this.inputLocation = inputLocation;
-                  }}
-                />
-              </Animated.View> */}
             </Animated.View>
-            <Animated.View style={[
-              {height:50, width:50, rigth:0}
-            ]}>
+            <Animated.View style={styles.buttonCamera}>
               <TouchableOpacity onPress={() => {
                 animation.minimizeBar();
-                this.blurInputs();
+                // this.blurInputs();
+                this.props.scannerCodeBar();
               }}>
                 <MaterialIcons
-                  name='keyboard-arrow-up' 
+                  name='barcode' 
                   size={36} 
                   style={styles.arrowMinimizeIcon} 
                   color='black'

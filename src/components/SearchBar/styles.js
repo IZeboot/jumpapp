@@ -15,7 +15,9 @@ export default styles = StyleSheet.create({
     zIndex: 99,
     backgroundColor: '#597fab',
     width: '100%',
-    overflow: 'hidden',
+    // borderColor:'red',
+    // borderWidth:5,
+    // overflow: 'hidden',
     paddingBottom: 10,
     ...ifIphoneX({
       paddingTop: 40
@@ -23,6 +25,9 @@ export default styles = StyleSheet.create({
       paddingTop: 28
     }),
   },
+  searchBar:{
+    flex:1
+  },  
   arrowMinimizeContainer: {
     position: 'relative',
     top: -3
@@ -38,6 +43,7 @@ export default styles = StyleSheet.create({
     marginTop: 3,
     marginLeft: 10,
     marginRight: 10,
+    width:'100%'
   },
   locationInput: {
     marginTop: 10,
@@ -55,10 +61,13 @@ export default styles = StyleSheet.create({
       marginTop: 13
     }),
     marginLeft: 43,
-    marginRight:70,
-    borderWidth:1,
-    borderColor:'red',
     fontSize: 15,
     color: '#999',
   },
+  buttonCamera:{
+    height:50, 
+    width:50, 
+    borderWidth:1, 
+    borderColor:'red'
+  }
 });
